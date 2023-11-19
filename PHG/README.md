@@ -1,2 +1,2 @@
-# SnudgleyWebsite
-A place for me to test github pages
+# Pup Hood generator
+Design your own pup hood online
