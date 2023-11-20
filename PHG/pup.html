@@ -1,25 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pup Hood Generator</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			background-color: #000000;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;	
+			border: 0px solid #000000;
+		}
+		th, td {
+			border: 0px solid #000000;
+			text-align: center;
+		}
+		td {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+		iframe {
+			background-color: #F00000;
+		}
+	</style>
+	<script>
+		const ASPECT_RATIO_THRESHOLD = 1.333333;
+		const INVERSE_ASPECT_RATIO_THRESHOLD = 0.75;
+		const ASPECT_RATION_PADDING = 8;
+		function handleResize() {
+			var iframe = document.getElementById('PupFrame');
+			var page_width = window.innerWidth - ASPECT_RATION_PADDING;
+			var page_height = window.innerHeight - ASPECT_RATION_PADDING;
+			if (page_width / page_height < ASPECT_RATIO_THRESHOLD){
+				iframe.style.width = page_width + 'px';
+				iframe.style.height = page_width * INVERSE_ASPECT_RATIO_THRESHOLD + 'px';
+			} else {
+				iframe.style.height = page_height + 'px';
+				iframe.style.width = page_height * ASPECT_RATIO_THRESHOLD + 'px';
+			}
+		}
+		window.addEventListener('resize', handleResize);
+		window.addEventListener('load', handleResize);
+	</script>
+	<title>Pup Hood Generator</title>
 </head>
 <body>
 
-    <h1>Pup Hood Generator</h1>
-    <script>
-        // Adjust iframe size when the window is resized
-        window.addEventListener('resize', function () {
-            var iframe = document.querySelector('iframe');
-            iframe.style.width = window.innerWidth * 0.9 + 'px';
-	    iframe.style.height = window.innerWidth * 0.69545454544 + 'px';//0.77272727272
-        });
-
-        // Trigger the resize event initially
-        window.dispatchEvent(new Event('resize'));
-    </script>
-    <iframe src="Pup Hood.html" width="800" height="600" frameborder="0"></iframe>
-
+    <table>
+        <tr>
+            <th style="color: #ffffff;">Pup Hood Generator</th>
+        </tr>
+        <tr>
+		<td>
+			<iframe id="PupFrame" src="Pup Hood.html" frameborder="0"></iframe>
+		</td>
+        </tr>
+    </table>
 </body>
 </html>
