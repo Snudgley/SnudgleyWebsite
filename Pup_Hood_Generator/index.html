@@ -1,63 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			background-color: #000000;
-		}
-		table {
-			width: 100%;
-			border-collapse: collapse;	
-			border: 0px solid #000000;
-		}
-		th, td {
-			border: 0px solid #000000;
-			text-align: center;
-		}
-		td {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: relative;
-		}
-	</style>
-	<script>
-		const ASPECT_RATIO_THRESHOLD = 1.333333;
-		const INVERSE_ASPECT_RATIO_THRESHOLD = 0.75;
-		const ASPECT_RATION_PADDING = 8;
-		function handleResize() {
-			var iframe = document.getElementById('PupFrame');
-			var page_width = window.innerWidth - ASPECT_RATION_PADDING;
-			var page_height = window.innerHeight - ASPECT_RATION_PADDING;
-			if (page_width / page_height < ASPECT_RATIO_THRESHOLD){
-				iframe.style.width = page_width + 'px';
-				iframe.style.height = page_width * INVERSE_ASPECT_RATIO_THRESHOLD + 'px';
-			} else {
-				iframe.style.height = page_height + 'px';
-				iframe.style.width = page_height * ASPECT_RATIO_THRESHOLD + 'px';
-			}
-		}
-		window.addEventListener('resize', handleResize);
-		window.addEventListener('load', handleResize);
-	</script>
-	<title>Pup Hood Generator</title>
-	<link id='-gd-engine-icon' rel='icon' type='image/png' href='Pup Hood.icon.png' />
-	<link rel='apple-touch-icon' href='Pup Hood.apple-touch-icon.png'/>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="5;url=http://mypuphood.dog/">
+  <title>Redirecting...</title>
 </head>
 <body>
-
-    <table>
-        <tr>
-            <th style="color: #ffffff;">Pup Hood Generator</th>
-        </tr>
-        <tr>
-		<td>
-			<iframe id="PupFrame" src="Pup Hood.html" frameborder="0"></iframe>
-		</td>
-        </tr>
-    </table>
+  <p>This page will automatically redirect to <a href="http://mypuphood.dog/">http://mypuphood.dog/</a> in 5 seconds.</p>
 </body>
 </html>
